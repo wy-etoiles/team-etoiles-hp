@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チーム・エトワール株式会社 - アニメと企業をつなぎ、新しい価値を創造する</title>
+    <meta name="description" content="チーム・エトワール株式会社は、プロダクトプレイスメント・タイアップを軸にした企画・制作・営業をワンストップで提供します。">
+    
+    <!-- External Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1e3a8a',
+                        'navy-dark': '#1e2875',
+                        gold: '#d4af37',
+                        'gold-light': '#f4e774',
+                        'gray-50': '#f8fafc',
+                        'gray-100': '#f1f5f9',
+                        'gray-900': '#0f172a'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'Noto Sans JP', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-900 overflow-x-hidden">
+
+    <!-- Header/Navigation -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50 transition-all duration-300" id="header">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center logo-container">
+                    <h1 class="logo-text font-serif font-semibold text-navy transition-all duration-300" id="header-text">team Étoiles</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#about" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">About</a></li>
+                    <li><a href="#works" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Works</a></li>
+                    <li><a href="#team" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Team</a></li>
+                    <li><a href="#contact" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-navy" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="hidden md:hidden mt-4 pb-4 border-t border-gray-100" id="mobile-menu">
+                <ul class="space-y-4 mt-4">
+                    <li><a href="#about" class="block text-gray-700 hover:text-navy transition-colors duration-300 font-medium">About</a></li>
+                    <li><a href="#works" class="block text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Works</a></li>
+                    <li><a href="#team" class="block text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Team</a></li>
+                    <li><a href="#contact" class="block text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
+        <!-- Subtle Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-gold rounded-full"></div>
+            <div class="absolute top-3/4 right-1/4 w-1 h-1 bg-navy rounded-full"></div>
+            <div class="absolute bottom-1/4 left-3/4 w-2 h-2 bg-gold rounded-full"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <!-- Large Logo in Hero -->
+                <div class="mb-16 animate-fade-in-up">
+                    <img src="images/logo.png" alt="team Étoiles" class="hero-logo mx-auto mb-12">
+                </div>
+                
+                <h2 class="text-4xl md:text-6xl font-light text-navy mb-8 leading-tight animate-fade-in-up delay-300 font-serif">
+                    アニメと企業をつなぎ、<br>
+                    <span class="font-medium text-gold relative">
+                        新しい価値を創造する
+                        <div class="absolute bottom-0 left-0 w-full h-0.5 bg-gold transform scale-x-0 animate-expand-line"></div>
+                    </span>
+                </h2>
+                
+                <p class="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed animate-fade-in-up delay-600 max-w-3xl mx-auto">
+                    プロダクトプレイスメント・タイアップを軸にした<br>
+                    企画・制作・営業をワンストップで
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up delay-900">
+                    <a href="#works" class="inline-flex items-center px-10 py-4 bg-navy text-white font-medium hover:bg-navy-dark transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+                        <span>実績を見る</span>
+                        <i class="fas fa-arrow-right ml-3 text-gold"></i>
+                    </a>
+                    <a href="#contact" class="inline-flex items-center px-10 py-4 border border-gold text-gold font-medium hover:bg-gold hover:text-navy transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+                        <span>お問い合わせ</span>
+                        <i class="fas fa-envelope ml-3"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Elegant Scroll Indicator -->
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+            <div class="w-6 h-10 border-2 border-navy rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-navy rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-navy mb-4">About us</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    私たちは、アニメコンテンツと企業のマーケティングニーズを結びつけ、
+                    双方にとって価値のあるコラボレーションを創出しています。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 scroll-animate">
+                    <div class="bg-gray-50 p-8 rounded-2xl card-hover">
+                        <h3 class="text-2xl font-bold text-navy mb-4">企業情報</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-building text-gold text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">チーム・エトワール株式会社</p>
+                                    <p class="text-gray-600">team Étoiles Inc.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-gold text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">本社所在地</p>
+                                    <p class="text-gray-600">〒104-0061<br>東京都中央区銀座1丁目12番4号 N&E BLD.6F</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-briefcase text-gold text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">事業者所在地</p>
+                                    <p class="text-gray-600">〒100-0006<br>東京都千代田区有楽町1-5-2<br>東宝日比谷プロムナードビル 11階</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-user-tie text-gold text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">代表取締役</p>
+                                    <p class="text-gray-600">佐々木ゆうろ</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-calendar text-gold text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">設立</p>
+                                    <p class="text-gray-600">令和5年10月17日</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 scroll-animate delay-1">
+                    <div class="bg-gradient-to-br from-navy to-navy-dark p-8 rounded-2xl text-white card-hover">
+                        <h3 class="text-2xl font-bold mb-4">私たちの強み</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-gold text-lg mr-3"></i>
+                                <span>企画から制作、営業まで一貫したサービス</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-gold text-lg mr-3"></i>
+                                <span>アニメ業界での豊富な実績とネットワーク</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-gold text-lg mr-3"></i>
+                                <span>企業ニーズを理解した戦略的提案力</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-gold text-lg mr-3"></i>
+                                <span>スタートアップならではの機動力と柔軟性</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section -->
+    <section id="works" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-serif text-navy mb-6">Works</h2>
+                <div class="w-32 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
+                    これまでに手がけた代表的なプロジェクトをご紹介します。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Project 1 -->
+                <div class="bg-white overflow-hidden work-card card-hover scroll-animate border border-gray-100">
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-navy to-navy-dark h-56 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/10"></div>
+                            <div class="text-center text-white relative z-10">
+                                <div class="w-20 h-20 border-2 border-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-play text-2xl text-gold"></i>
+                                </div>
+                                <p class="text-xl font-light">HIGHSPEED Étoile</p>
+                            </div>
+                        </div>
+                        <div class="absolute top-6 right-6 bg-gold text-navy px-4 py-2 text-sm font-medium">
+                            原案・プロデュース
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-serif text-navy mb-4">TVアニメ「HIGHSPEED Étoile」</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed font-light">
+                            原案・プロデュース・営業統括を担当。レーシングアニメとして話題を集めた作品です。
+                        </p>
+                        <a href="https://youtu.be/F4VJttn-xEA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3 border border-gold text-gold hover:bg-gold hover:text-navy transition-all duration-300 font-medium">
+                            <i class="fab fa-youtube text-lg mr-3"></i>
+                            動画を見る
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white overflow-hidden work-card card-hover scroll-animate delay-1 border border-gray-100">
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-navy to-navy-dark h-56 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/10"></div>
+                            <div class="text-center text-white relative z-10">
+                                <div class="w-20 h-20 border-2 border-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-play text-2xl text-gold"></i>
+                                </div>
+                                <p class="text-xl font-light">ウマ娘シンデレラグレイ</p>
+                            </div>
+                        </div>
+                        <div class="absolute top-6 right-6 bg-gold text-navy px-4 py-2 text-sm font-medium">
+                            プロデュース
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-serif text-navy mb-4">TVアニメ「ウマ娘シンデレラグレイ」AUTOBACSコラボ</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed font-light">
+                            人気アニメとオートバックスとのコラボレーション企画をプロデュース。
+                        </p>
+                        <a href="https://youtu.be/F4VJttn-xEA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3 border border-gold text-gold hover:bg-gold hover:text-navy transition-all duration-300 font-medium">
+                            <i class="fab fa-youtube text-lg mr-3"></i>
+                            動画を見る
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white overflow-hidden work-card card-hover scroll-animate delay-2 border border-gray-100">
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-navy to-navy-dark h-56 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/10"></div>
+                            <div class="text-center text-white relative z-10">
+                                <div class="w-20 h-20 border-2 border-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-play text-2xl text-gold"></i>
+                                </div>
+                                <p class="text-xl font-light">大阪・関西万博</p>
+                            </div>
+                        </div>
+                        <div class="absolute top-6 right-6 bg-gold text-navy px-4 py-2 text-sm font-medium">
+                            営業協力
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-serif text-navy mb-4">大阪・関西万博「いのちめぐる冒険」</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed font-light">
+                            2025年大阪・関西万博の公式コンテンツ制作における営業協力を担当。
+                        </p>
+                        <a href="https://youtu.be/U5e5J28pTsQ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3 border border-gold text-gold hover:bg-gold hover:text-navy transition-all duration-300 font-medium">
+                            <i class="fab fa-youtube text-lg mr-3"></i>
+                            動画を見る
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="bg-white overflow-hidden work-card card-hover scroll-animate delay-3 border border-gray-100">
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-navy to-navy-dark h-56 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/10"></div>
+                            <div class="text-center text-white relative z-10">
+                                <div class="w-20 h-20 border-2 border-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-play text-2xl text-gold"></i>
+                                </div>
+                                <p class="text-xl font-light">地球のラテール</p>
+                            </div>
+                        </div>
+                        <div class="absolute top-6 right-6 bg-gold text-navy px-4 py-2 text-sm font-medium">
+                            営業協力
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-serif text-navy mb-4">NHK TVアニメ「地球のラテール」</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed font-light">
+                            NHK放送の話題作における営業協力として、企業とのタイアップ企画を支援。
+                        </p>
+                        <a href="https://youtu.be/HDkb3oEJgUs" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3 border border-gold text-gold hover:bg-gold hover:text-navy transition-all duration-300 font-medium">
+                            <i class="fab fa-youtube text-lg mr-3"></i>
+                            動画を見る
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Logos Section -->
+    <section class="py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif text-navy mb-6">実績（一部）</h2>
+                <div class="w-32 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
+                    これまでにご協力いただいた企業・団体の一部をご紹介いたします。
+                </p>
+            </div>
+            
+            <!-- Scrolling Logo Container -->
+            <div class="relative">
+                <!-- Navigation Arrows (Desktop) -->
+                <button class="logo-nav logo-nav-prev hidden lg:flex" id="logo-prev" aria-label="前のロゴを表示">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="logo-nav logo-nav-next hidden lg:flex" id="logo-next" aria-label="次のロゴを表示">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Scrollable Logo Area -->
+                <div class="logo-scroll-container" id="logo-container">
+                    <div class="logo-scroll-track infinite-scroll" id="logo-track">
+                        <!-- Logos will be dynamically generated by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Scroll Indicators (Mobile) -->
+                <div class="flex justify-center mt-8 lg:hidden">
+                    <div class="flex space-x-2">
+                        <div class="scroll-dot active"></div>
+                        <div class="scroll-dot"></div>
+                        <div class="scroll-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-serif text-navy mb-6">Team</h2>
+                <div class="w-32 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
+                    豊富な経験と専門知識を持つメンバーが、
+                    お客様のプロジェクトを成功に導きます。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Member 1 -->
+                <div class="text-center team-member scroll-animate">
+                    <div class="relative mb-8 member-photo">
+                        <div class="w-36 h-36 mx-auto border border-gold flex items-center justify-center hover:bg-gray-50 transition-all duration-300">
+                            <i class="fas fa-user text-5xl text-navy"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-serif text-navy mb-3">佐々木ゆうろ</h3>
+                    <p class="text-gold font-medium mb-6 uppercase tracking-wide text-sm">代表取締役</p>
+                    <div class="border-l-2 border-gold pl-6 text-left">
+                        <p class="text-gray-600 leading-relaxed font-light">
+                            アニメ業界での豊富な経験を活かし、企業とアニメコンテンツを繋ぐ戦略的なパートナーシップの構築を得意としています。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Member 2 -->
+                <div class="text-center team-member scroll-animate delay-1">
+                    <div class="relative mb-8 member-photo">
+                        <div class="w-36 h-36 mx-auto border border-gold flex items-center justify-center hover:bg-gray-50 transition-all duration-300">
+                            <i class="fas fa-user text-5xl text-navy"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-serif text-navy mb-3">メンバー名</h3>
+                    <p class="text-gold font-medium mb-6 uppercase tracking-wide text-sm">役職</p>
+                    <div class="border-l-2 border-gold pl-6 text-left">
+                        <p class="text-gray-600 leading-relaxed font-light">
+                            プロダクション管理と営業戦略の専門知識を持ち、クライアントのニーズに応じた最適なソリューションを提供します。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Member 3 -->
+                <div class="text-center team-member scroll-animate delay-2">
+                    <div class="relative mb-8 member-photo">
+                        <div class="w-36 h-36 mx-auto border border-gold flex items-center justify-center hover:bg-gray-50 transition-all duration-300">
+                            <i class="fas fa-user text-5xl text-navy"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-serif text-navy mb-3">メンバー名</h3>
+                    <p class="text-gold font-medium mb-6 uppercase tracking-wide text-sm">役職</p>
+                    <div class="border-l-2 border-gold pl-6 text-left">
+                        <p class="text-gray-600 leading-relaxed font-light">
+                            クリエイティブディレクションとマーケティング戦略の分野で活躍し、革新的なコラボレーション企画を立案・実行します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-serif text-navy mb-6">Contact</h2>
+                <div class="w-32 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
+                    お気軽にお問い合わせください。<br>
+                    アニメと企業の新しいコラボレーションを一緒に創造しましょう。
+                </p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto scroll-animate">
+                <form class="bg-white p-12 border border-gray-200 shadow-sm" id="contact-form">
+                    <div class="space-y-8">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-navy mb-3 uppercase tracking-wide">お名前 *</label>
+                            <input type="text" id="name" name="name" required class="w-full px-0 py-4 border-0 border-b border-gray-300 bg-transparent focus:border-gold focus:outline-none transition-all duration-300 text-lg">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-navy mb-3 uppercase tracking-wide">メールアドレス *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-0 py-4 border-0 border-b border-gray-300 bg-transparent focus:border-gold focus:outline-none transition-all duration-300 text-lg">
+                        </div>
+                        
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-navy mb-3 uppercase tracking-wide">会社名</label>
+                            <input type="text" id="company" name="company" class="w-full px-0 py-4 border-0 border-b border-gray-300 bg-transparent focus:border-gold focus:outline-none transition-all duration-300 text-lg">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-navy mb-3 uppercase tracking-wide">お問い合わせ内容 *</label>
+                            <textarea id="message" name="message" rows="6" required class="w-full px-0 py-4 border-0 border-b border-gray-300 bg-transparent focus:border-gold focus:outline-none transition-all duration-300 text-lg resize-none"></textarea>
+                        </div>
+                        
+                        <div class="pt-6">
+                            <button type="submit" class="w-full bg-gold text-navy font-medium py-4 px-8 hover:bg-navy hover:text-white transition-all duration-500 transform hover:-translate-y-1 shadow-sm hover:shadow-lg uppercase tracking-wider">
+                                <span class="inline-flex items-center justify-center">
+                                    <i class="fas fa-paper-plane mr-3"></i>
+                                    送信する
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Success Message -->
+                <div id="success-message" class="hidden mt-12 p-8 bg-white border-l-4 border-gold text-center">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-check text-2xl text-navy"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-navy mb-2">送信完了</h3>
+                    <p class="text-gray-600 font-light">お問い合わせありがとうございました。近日中にご連絡いたします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="mb-4">
+                        <img src="images/logo.png" alt="team Étoiles" class="h-12 w-auto filter brightness-0 invert">
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        アニメと企業をつなぎ、新しい価値を創造するパートナーとして、
+                        革新的なコラボレーションを提供しています。
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">会社情報</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p>チーム・エトワール株式会社</p>
+                        <p>〒104-0061<br>東京都中央区銀座1丁目12番4号<br>N&E BLD.6F</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">フォローする</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-navy transition-all duration-300 transform hover:scale-110">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-navy transition-all duration-300 transform hover:scale-110">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-navy transition-all duration-300 transform hover:scale-110">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-8 text-center">
+                <p class="text-gray-300">
+                    &copy; 2023 チーム・エトワール株式会社. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,742 @@
+/* 
+ * チーム・エトワール株式会社 ランディングページ
+ * カスタムCSS - ロゴ中心の高級感あるデザイン
+ * シンプル × 上品なアニメーション
+ */
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===== Logo Styles ===== */
+.logo-container {
+    transition: all 0.3s ease;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    letter-spacing: 0.025em;
+}
+
+/* Header scrolled state */
+#header.scrolled .logo-text {
+    font-size: 1.25rem;
+}
+
+/* Hero Logo Styles */
+.hero-logo {
+    height: 120px;
+    width: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Custom Animations */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expand-line {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.animate-expand-line {
+    animation: expand-line 1s ease-out 1.2s forwards;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+    }
+}
+
+/* Animation Classes */
+.animate-fade-in-up {
+    animation: fade-in-up 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    opacity: 0;
+}
+
+.animate-fade-in-up.delay-300 {
+    animation-delay: 0.4s;
+}
+
+.animate-fade-in-up.delay-600 {
+    animation-delay: 0.8s;
+}
+
+.animate-fade-in-up.delay-900 {
+    animation-delay: 1.2s;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Header Styles */
+#header {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+#header.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section Enhancements */
+.hero-bg {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #e0f2fe 100%);
+    position: relative;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Scroll Animations - Elegant & Subtle */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.scroll-animate.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-animate.delay-1 {
+    transition-delay: 0.15s;
+}
+
+.scroll-animate.delay-2 {
+    transition-delay: 0.3s;
+}
+
+.scroll-animate.delay-3 {
+    transition-delay: 0.45s;
+}
+
+/* Button Enhancements */
+.btn-primary {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e2875 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-secondary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #1e3a8a;
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn-secondary:hover::before {
+    width: 100%;
+}
+
+/* Card Hover Effects - Refined & Minimal */
+.card-hover {
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Premium Gold Accents */
+.gold-accent {
+    position: relative;
+}
+
+.gold-accent::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.gold-accent:hover::after {
+    transform: scaleX(1);
+}
+
+/* Work Cards - Luxury Aesthetic */
+.work-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.work-card:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+}
+
+/* Team Member Cards - Minimalist Luxury */
+.team-member {
+    position: relative;
+    padding: 2rem;
+    transition: all 0.5s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-2px);
+}
+
+.team-member .member-photo {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member .member-photo > div {
+    transition: all 0.4s ease;
+}
+
+.team-member:hover .member-photo > div {
+    border-color: rgba(212, 175, 55, 0.8);
+    background-color: rgba(248, 250, 252, 0.5);
+}
+
+/* Form Enhancements - Luxury Minimal Style */
+.form-input {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: transparent;
+}
+
+.form-input:focus {
+    border-color: #d4af37 !important;
+    box-shadow: 0 2px 0 #d4af37;
+}
+
+/* Elegant Form Labels */
+input[type="text"]:focus + label,
+input[type="email"]:focus + label,
+textarea:focus + label {
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+/* Parallax Effect */
+.parallax-element {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Section Dividers */
+.section-divider {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #1e3a8a;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .hero-logo {
+        height: 80px;
+    }
+    
+    .logo-text {
+        font-size: 1.25rem;
+    }
+    
+    #header.scrolled .logo-text {
+        font-size: 1.125rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .card-hover:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    }
+    
+    .animate-fade-in-up {
+        animation-duration: 0.8s;
+    }
+    
+    .team-member {
+        padding: 1rem;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .auto-dark {
+        color: #f1f5f9;
+        background-color: #0f172a;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .high-contrast {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .scroll-animate {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* Accessibility Enhancements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.focus-visible:focus-visible {
+    outline: 2px solid #d4af37;
+    outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #1e3a8a, #d4af37);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #1e2875, #f4e774);
+}
+
+/* Selection Styles */
+::selection {
+    background-color: rgba(212, 175, 55, 0.3);
+    color: #1e3a8a;
+}
+
+::-moz-selection {
+    background-color: rgba(212, 175, 55, 0.3);
+    color: #1e3a8a;
+}
+
+/* ===== Client Logos Section ===== */
+.logo-scroll-container {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -2rem;
+    padding: 0 2rem;
+}
+
+.logo-scroll-track {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem 0;
+    will-change: transform;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.logo-scroll-track::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.logo-item {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 200px;
+}
+
+.logo-placeholder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.logo-content {
+    text-align: center;
+    color: #6b7280;
+    transition: all 0.4s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.logo-text {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+.logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    filter: grayscale(100%) opacity(0.8);
+    transition: all 0.4s ease;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.logo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(30, 58, 138, 0.95);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 2;
+}
+
+.logo-overlay span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 0 1rem;
+    line-height: 1.4;
+}
+
+.logo-placeholder:hover {
+    border-color: rgba(212, 175, 55, 0.6);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+}
+
+.logo-placeholder:hover .logo-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.logo-placeholder:hover .logo-content {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.logo-placeholder:hover .logo-image {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+}
+
+/* Navigation Arrows */
+.logo-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #1e3a8a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+}
+
+.logo-nav:hover {
+    background: #d4af37;
+    color: white;
+    border-color: #d4af37;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.logo-nav-prev {
+    left: -1rem;
+}
+
+.logo-nav-next {
+    right: -1rem;
+}
+
+.logo-nav:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.logo-nav:disabled:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1e3a8a;
+    transform: translateY(-50%) scale(1);
+}
+
+/* Scroll Indicators */
+.scroll-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.scroll-dot.active {
+    background: #d4af37;
+    transform: scale(1.2);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 1024px) {
+    .logo-scroll-container {
+        margin: 0 -1rem;
+        padding: 0 1rem;
+    }
+    
+    .logo-scroll-track {
+        gap: 2rem;
+    }
+    
+    .logo-item {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .logo-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-scroll-track {
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+    }
+    
+    .logo-item {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .logo-overlay span {
+        font-size: 0.75rem;
+    }
+}
+
+/* Touch Scroll Behavior */
+.logo-scroll-track {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Infinite Loop Auto-scroll Animation */
+@keyframes infinite-logo-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.logo-scroll-track.infinite-scroll {
+    animation: infinite-logo-scroll 40s linear infinite;
+}
+
+.logo-scroll-track.infinite-scroll:hover {
+    animation-play-state: paused;
+}
+
+.logo-scroll-track.paused {
+    animation-play-state: paused;
+}
+
+/* Performance Optimizations */
+.gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.optimize-rendering {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
